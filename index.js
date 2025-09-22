@@ -2,14 +2,14 @@
   const FORM_ID = "1fB1WhHjE8PWssJLVxg1ucjlw6CD8dzBfjuCux-4Mub4";
   // Reemplaza cada entry.* con los IDs reales de tu formulario (ver instrucciones)
   const ENTRY_IDS = {
-    nombre: "entry.XXXXXXXXXX",
-    apPaterno: "entry.XXXXXXXXXX",
-    apMaterno: "entry.XXXXXXXXXX",
-    documento: "entry.XXXXXXXXXX",
-    telefono: "entry.XXXXXXXXXX",
-    correo: "entry.XXXXXXXXXX",
-    empresa: "entry.XXXXXXXXXX",
-    cargo: "entry.XXXXXXXXXX"
+    nombre: "entry.203986870",
+    apPaterno: "entry.498342649",
+    apMaterno: "entry.220730048",
+    documento: "entry.581004029",
+    telefono: "entry.1598487705",
+    correo: "entry.1008212861",
+    empresa: "entry.303071963",
+    cargo: "entry.520641510"
   };
 
   // ======= PASOS (una pregunta por pantalla) =======
