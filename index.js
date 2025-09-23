@@ -2,10 +2,8 @@
   const FORM_ID = "1fB1WhHjE8PWssJLVxg1ucjlw6CD8dzBfjuCux-4Mub4";
   // Reemplaza cada entry.* con los IDs reales de tu formulario (ver instrucciones)
   const ENTRY_IDS = {
-    nombre: "entry.203986870",
-    apPaterno: "entry.498342649",
-    apMaterno: "entry.220730048",
-    documento: "entry.581004029",
+    nombres: "entry.203986870",
+    apellidos: "entry.498342649",    
     telefono: "entry.1598487705",
     correo: "entry.1008212861",
     empresa: "entry.303071963",
@@ -14,14 +12,12 @@
 
   // ======= PASOS (una pregunta por pantalla) =======
   const steps = [
-    { key: 'nombre',    label: '¿Cuál es tu <b>nombre</b>?',                   type: 'text',    required:true,  attrs:{autocomplete:'given-name'} },
-    { key: 'apPaterno', label: '¿Cuál es tu <b>apellido paterno</b>?',         type: 'text',    required:true,  attrs:{autocomplete:'family-name'} },
-    { key: 'apMaterno', label: '¿Cuál es tu <b>apellido materno</b>?',         type: 'text',    required:true },
-    { key: 'documento', label: 'Ingresa tu <b>número de documento</b> (DNI/CE/Pasaporte)', type: 'text', required:true,  attrs:{ inputmode:'numeric', pattern:'[0-9]{8,12}' } },
-    { key: 'telefono',  label: 'Tu <b>teléfono móvil</b>',                     type: 'tel',     required:true,  attrs:{ inputmode:'tel', pattern:'[0-9\s+()-]{6,}', placeholder:'+51 999 999 999' } },
-    { key: 'correo',    label: 'Tu <b>correo electrónico</b>',                 type: 'email',   required:true,  attrs:{ placeholder:'tucorreo@ejemplo.com' } },
-    { key: 'empresa',   label: '¿En qué <b>empresa</b> trabajas?',             type: 'text',    required:true },
-    { key: 'cargo',     label: '¿Cuál es tu <b>cargo</b>?',                    type: 'text',    required:true }
+    { key: 'nombres',    label: '¿Cuáles son tus <b>nombre(s)</b>?',            type: 'text',    required:true,  attrs:{autocomplete:'given-name'} },
+    { key: 'apellidos', label: '¿Cuáles son tus <b>apellidos</b>?',             type: 'text',    required:true,  attrs:{autocomplete:'family-name'} },
+    { key: 'telefono',  label: 'Tu <b>teléfono móvil</b>',                      type: 'tel',     required:true,  attrs:{ inputmode:'tel', pattern:'[0-9\s+()-]{6,}', placeholder:'+51 999 999 999' } },
+    { key: 'correo',    label: 'Tu <b>correo electrónico</b>',                  type: 'email',   required:true,  attrs:{ placeholder:'tucorreo@ejemplo.com' } },
+    { key: 'empresa',   label: '¿En qué <b>empresa</b> trabajas?',              type: 'text',    required:true },
+    { key: 'cargo',     label: '¿Cuál es tu <b>cargo</b>?',                     type: 'text',    required:true }
   ];
 
   // ======= ESTADO =======
@@ -114,7 +110,6 @@
       if (i >= plain.length){ clearInterval(timer); target.innerHTML = html; }
     }, speed);
   }
-
 
   // ======= IMPLEMENTACIÓN PERSONALIZADA COSMOS =======
   function createCustomStarField() {
@@ -488,7 +483,7 @@
   function runTests(){
     console.group('%cPruebas rápidas','color:#136177;font-weight:bold');
     try{
-      console.assert(Array.isArray(steps) && steps.length===8, 'Debe haber 8 pasos.');
+      console.assert(Array.isArray(steps) && steps.length===6, 'Debe haber 6 pasos.');
       console.assert(typeof typeQuestion === 'function', 'typeQuestion existe');
       const prev = idx; idx = 0; setProgress(); idx = prev;
       const width = document.getElementById('progress').style.width;
@@ -545,10 +540,8 @@
 
       // mapa a entry IDs
       const payload = {
-        [ENTRY_IDS.nombre]:   values.nombre,
-        [ENTRY_IDS.apPaterno]:values.apPaterno,
-        [ENTRY_IDS.apMaterno]:values.apMaterno,
-        [ENTRY_IDS.documento]:values.documento,
+        [ENTRY_IDS.nombres]:   values.nombres,
+        [ENTRY_IDS.apellidos]:values.apellidos,        
         [ENTRY_IDS.telefono]: values.telefono,
         [ENTRY_IDS.correo]:   values.correo,
         [ENTRY_IDS.empresa]:  values.empresa,
