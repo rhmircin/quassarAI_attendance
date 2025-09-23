@@ -1,13 +1,13 @@
   // ======= CONFIGURACIÓN GOOGLE FORMS =======
-  const FORM_ID = "1fB1WhHjE8PWssJLVxg1ucjlw6CD8dzBfjuCux-4Mub4";
+  const FORM_ID = "1POvy3b0oLTXcPWN-EGwygY8MGwpOT8QbmdiiHN2pL2Y"; //-7ajx6iVhQ
   // Reemplaza cada entry.* con los IDs reales de tu formulario (ver instrucciones)
   const ENTRY_IDS = {
-    nombres: "entry.203986870",
-    apellidos: "entry.498342649",    
-    telefono: "entry.1598487705",
-    correo: "entry.1008212861",
-    empresa: "entry.303071963",
-    cargo: "entry.520641510"
+    nombres: "entry.1311866991",
+    apellidos: "entry.2048208622",    
+    telefono: "entry.1421547149",
+    correo: "entry.1964931723",
+    empresa: "entry.2073239895",
+    cargo: "entry.2128829154"
   };
 
   // ======= PASOS (una pregunta por pantalla) =======
@@ -86,8 +86,19 @@
     native.style.display = 'none';
     for (const [k, v] of Object.entries(payload)) {
       const input = document.createElement('input');
-      input.type = 'hidden'; input.name = k; input.value = v; native.appendChild(input);
+      if (input.name = 'emailAddress' ) {
+        input.type = 'email'; 
+      } else {
+        input.type = 'hidden'; 
+      }
+      input.name = k; 
+      input.value = v; 
+      native.appendChild(input);
     }
+    // Add emailReceipt parameter manually
+    //const input = document.createElement('input');
+    //input.type = 'email'; input.name = 'emailReceipt'; input.value = true; native.appendChild(input);
+
     document.body.appendChild(native); return native;
   }
 
@@ -559,6 +570,7 @@
       const native = buildNativeForm(payload);
 
       const hidden = document.getElementById('hidden_iframe');
+      //const hidden = document.getElementById('hidden_div');
       const onDone = ()=>{
         setStatus('ok','¡Listo! Registro enviado correctamente.');
         Object.keys(values).forEach(k=>values[k]='');
