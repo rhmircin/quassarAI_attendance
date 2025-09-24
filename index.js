@@ -576,6 +576,12 @@
         Object.keys(values).forEach(k=>values[k]='');
         idx = 0; render();
         native.remove(); hidden.removeEventListener('load', onDone);
+
+        // Hide form and show confirmation
+        document.getElementById('formContainer').classList.add('hidden');
+        const confirmation = document.getElementById('confirmation');
+        //confirmation.textContent = "Gracias por registrarte a nuestro webinar. Te enviaremos la información de la reunión por correo.";
+        confirmation.classList.remove('hidden');
       };
       hidden.addEventListener('load', onDone, { once:true });
       native.submit();
@@ -608,3 +614,5 @@
 
     console.log('🎉 Aplicación inicializada completamente');
   });
+
+  
