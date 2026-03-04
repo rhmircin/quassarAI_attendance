@@ -1,5 +1,5 @@
   // ======= CONFIGURACIÓN GOOGLE FORMS =======
-  const FORM_ID = "1FAIpQLSeL32i-9XFLOvSQsSe8oKPvNLvP-Wbo1lNq1amLagRbt_H_9A"; //-7ajx6iVhQ
+  const FORM_ID = "1IQ4meGW3145JhevO0N-9mpKpClsNxaSMUkom0LovRkQ"; //-7ajx6iVhQ
   // Reemplaza cada entry.* con los IDs reales de tu formulario (ver instrucciones)
   const ENTRY_IDS = {
     nombres: "entry.1311866991",
